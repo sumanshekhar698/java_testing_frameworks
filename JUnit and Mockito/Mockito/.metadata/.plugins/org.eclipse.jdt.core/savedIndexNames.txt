@@ -1,0 +1,17 @@
+INDEX VERSION 1.131+/home/asteros/code/testing/JUnit and Mockito/Mockito/.metadata/.plugins/org.eclipse.jdt.core
+3041081419.index
+1320726243.index
+596797019.index
+994890851.index
+2810752246.index
+1880208245.index
+3458490967.index
+2830941169.index
+1785155306.index
+101211429.index
+528074781.index
+346131440.index
+1660101968.index
+3739139514.index
+2265279978.index
+2770664333.index

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.mockito.runners.MockitoJUnitRunner"/>
+    <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="org.powermock.modules.junit4.PowerMockRunner"/>
+    <fullyQualifiedTypeName name="org.powermock.reflect.Whitebox"/>
+    <fullyQualifiedTypeName name="org.powermock.api.mockito.PowerMockito"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

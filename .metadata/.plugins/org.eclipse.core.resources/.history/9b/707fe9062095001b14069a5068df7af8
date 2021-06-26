@@ -1,0 +1,33 @@
+package com.in28minutes.junit.helper;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class QuickBeforeAftertest {
+
+	
+	@Before
+	public void setup() {
+	System.out.println("Before test \"Initializers & Precurssors\"");
+}
+	
+	@After
+	public void teardown() {
+	System.out.println("After test \"Dispossal\"");
+}
+	
+	
+	@Test
+	public void test1() {
+		System.out.println("test 1 excuted");
+	}
+
+	
+	
+	@Test
+	public void test2() {
+		System.out.println("test 2 excuted");
+	}
+
+}

@@ -1,0 +1,129 @@
+package com.in28minutes.business;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+
+import com.in28minutes.data.api.TodoService;
+
+public class TodoBusinessImplMockitoTestGivenThen {
+
+	@Test
+	public void testReterieveTodosRelatedToSpring_usingBDD() {
+		/*
+		 * Given -> When -> Then
+		 */
+
+//		GIVEN-> initial setup
+		TodoService todoService = mock(TodoService.class);
+
+		List<String> allTodos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
+
+		given(todoService.retrieveTodos("Ranga")).willReturn(allTodos);
+
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
+
+//		WHEN -> Specific Action
+		List<String> filteredTodos = todoBusinessImpl.retrieveTodosRelatedToSpring("Ranga");
+
+//		THEN -> validation
+		assertThat(filteredTodos.size(), is(2));// AE
+//		is() => HAMCREST MAtchers
+	}
+
+	@Test
+	public void testDeleteTodosNotRelatedToSpring_usingBDD() {
+
+//		GIVEN initial setup
+		TodoService todoServiceMock = mock(TodoService.class);
+
+		List<String> allTodos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
+
+		given(todoServiceMock.retrieveTodos("Ranga")).willReturn(allTodos);
+
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+
+//		WHEN
+		todoBusinessImpl.deleteTodosNotRelatedToSpring("Ranga");
+
+//		THEN
+		verify(todoServiceMock).deleteToDo("Learn To Dance");// if called with "Learn To Dance"
+		then(todoServiceMock).should().deleteToDo("Learn To Dance");// similar like above
+
+		verify(todoServiceMock, never()).deleteToDo("Learn Spring");// if not called with "Learn To Dance"
+		then(todoServiceMock).should(never()).deleteToDo("Learn Spring");// similar like above
+
+		verify(todoServiceMock, times(1)).deleteToDo("Learn To Dance");// called 1 times
+		verify(todoServiceMock, atLeast(1)).deleteToDo("Learn To Dance");// called at least 1 times
+
+	}
+
+	@Test
+	public void testDeleteTodosNotRelatedToSpring_usingBDD_argumentCapture() {
+
+//		GIVEN initial setup
+		TodoService todoServiceMock = mock(TodoService.class);
+
+		List<String> allTodos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn to Dance");
+
+		given(todoServiceMock.retrieveTodos("Ranga")).willReturn(allTodos);
+
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+
+//		WHEN
+		todoBusinessImpl.deleteTodosNotRelatedToSpring("Ranga");
+
+//		THEN
+		then(todoServiceMock).should().deleteToDo("Learn To Dance");// similar like above
+
+//		declare argument captor
+		ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
+
+//		capturing it on the specific method call
+		then(todoServiceMock).should().deleteToDo(argumentCaptor.capture());// similar like above
+
+//		checking
+		assertThat(argumentCaptor.getValue(), is("Learn To Dance"));
+	}
+
+	@Test
+	public void testDeleteTodosNotRelatedToSpring_usingBDD_MultipleArgumentCapture() {
+
+//		GIVEN initial setup
+		TodoService todoServiceMock = mock(TodoService.class);
+
+		List<String> allTodos = Arrays.asList("Learn Django MVC", "Learn Spring", "Learn to Dance");
+
+		given(todoServiceMock.retrieveTodos("Ranga")).willReturn(allTodos);
+
+		TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+
+//		WHEN
+		todoBusinessImpl.deleteTodosNotRelatedToSpring("Ranga");
+
+//		THEN
+		then(todoServiceMock).should().deleteToDo("Learn To Dance");// similar like above
+
+//		declare argument captor
+		ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
+
+//		capturing it on the specific method call
+		then(todoServiceMock).should(times(2)).deleteToDo(argumentCaptor.capture());// similar like above
+
+//		checking and capturing  Multiple calls
+		assertThat(argumentCaptor.getAllValues().size(), is(2));
+	}
+
+}

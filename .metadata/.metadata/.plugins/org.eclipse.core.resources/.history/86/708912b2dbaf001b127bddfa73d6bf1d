@@ -1,0 +1,15 @@
+package com.core.datatypes;
+
+public class StringTricks {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Object si[] = new Object[5];
+		si[0] = 1;
+		si[1] = "Strings";
+		si[2] = 3.141;
+		System.out.println();
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Inline local variable &apos;com.in28minutes.junit.helper.StringHelperTest.testTruncateAInFirst2Positions().actual&apos; in &apos;com.in28minutes.junit.helper.StringHelperTest.testTruncateAInFirst2Positions()&apos;&#x0A;- Original project: &apos;mockito&amp;Junit-course&apos;&#x0A;- Original element: &apos;com.in28minutes.junit.helper.StringHelperTest.testTruncateAInFirst2Positions().actual&apos;" description="Inline local variable &apos;actual&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.in28minutes.junit.helper{StringHelperTest.java" selection="321 0" stamp="1617520688227" version="1.0"/>
+</session>

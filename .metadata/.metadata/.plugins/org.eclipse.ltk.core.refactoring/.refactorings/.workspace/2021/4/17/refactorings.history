@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mockito-course&apos; to &apos;junit_mockito-course&apos;" description="Rename resource &apos;mockito-course&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/mockito-course" name="junit_mockito-course" stamp="1618720048842" updateReferences="true"/>
+</session>

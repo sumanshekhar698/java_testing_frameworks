@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/asteros/code/testing/.metadata/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+4085775135.index
+651012041.index
+2729828302.index
+2897231597.index
+2117633525.index
+64152360.index

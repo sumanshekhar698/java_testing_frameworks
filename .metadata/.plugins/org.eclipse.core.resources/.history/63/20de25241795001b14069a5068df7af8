@@ -1,0 +1,30 @@
+package com.in28minutes.junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void testTruncateAInFirst2Positions() {
+//		fail("Not yet implemented");
+//		assertEquals("ABCD", "ABCD");
+//						EA
+		/*
+		 * AACD -> CD ACD -> CD CDEF -> CDEF CDAA -. CDAA
+		 */
+		StringHelper helper = new StringHelper();
+		String expected = "CD";
+		assertEquals(expected, helper.truncateAInFirst2Positions("AACD"));
+
+	}
+
+	@Test
+	public void testAreFirstAndLastTwoCharactersTheSame() {
+		StringHelper helper = new StringHelper();
+		String expected = "CD";
+		assertEquals(expected, helper.truncateAInFirst2Positions("AACD"));
+	}
+
+}
